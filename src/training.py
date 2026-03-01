@@ -29,7 +29,10 @@ def train(model, ref_model, dataloader, epochs, device, lr, tokenizer):
     ref_model.eval()
     model.train()
     history = {
-        "loss": [], "chosen_reward": [], "rejected_reward": [], "reward_margin": []
+        "loss": [],
+        "chosen_reward": [],
+        "rejected_reward": [],
+        "reward_margin": []
     }
 
     for epoch in range(epochs):
