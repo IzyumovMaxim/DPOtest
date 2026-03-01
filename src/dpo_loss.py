@@ -10,7 +10,7 @@ def dpo_loss(policy_chosen_logps,
     rejected_reward = beta * (policy_rejected_logps - reference_rejected_logps)
     logit = chosen_reward - rejected_reward
     loss = -1 * logsigmoid(logit).mean()
-    return loss
+    return loss, chosen_reward.mean(), rejected_reward.mean()
 
 def change_raw_output(logits, labels, attention_mask):
     logits = logits[:, :-1, :]

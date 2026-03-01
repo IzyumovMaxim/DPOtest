@@ -28,5 +28,14 @@
    ```bash
     docker run --gpus all -it dpo_project
     ```
+### Локальная установка
+1. Устанавливаем зависимости:
+    ```
+   pip install -r requirements.txt
+   ```
+2. Запускаем обучение:
+     ```
+    python -m src.main
+   ```
 
 ## Анализ результатов
