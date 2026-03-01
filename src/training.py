@@ -43,6 +43,10 @@ def train(model, ref_model, dataloader, epochs, device, lr):
             loss.backward()
             optimizer.step()
             margin = (chosen_reward - rejected_reward).item()
+            history["loss"].append(loss.item())
+            history["chosen_reward"].append(chosen_reward.item())
+            history["rejected_reward"].append(rejected_reward.item())
+            history["reward_margin"].append(margin)
             loop.set_postfix(loss=loss.item(), margin=margin)
     with open("training_logs.json", "w") as f:
         json.dump(history, f)
