@@ -7,7 +7,7 @@ from src.training import train
 
 def main():
     model_name = "gpt2"
-    batch_size = 4
+    batch_size = 8
     max_len = 512
     samples = 3000
     epochs = 1
